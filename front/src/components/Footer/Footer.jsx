@@ -1,9 +1,13 @@
-import styles from "./Footer.module.css";
+import { Box, Typography } from '@mui/material';
 
-export const Footer = () => {
+const Footer = () => {
     return (
-        <footer className={styles.AppFooter}>
-            <p>&copy; 2023 Food Recognition App. Все права защищены.</p>
-        </footer>
+        <Box sx={{ p: 2, textAlign: 'center', backgroundColor: 'primary.main', color: 'white', mt: 'auto' }}>
+            <Typography variant="body2">
+                © 2023 Food Detector. All rights reserved.
+            </Typography>
+        </Box>
     );
 };
+
+export default Footer;

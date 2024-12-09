@@ -1,9 +1,20 @@
-import styles from "./Header.module.css";
+import React from 'react';
+import { AppBar, Toolbar, IconButton } from '@mui/material';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Logo from '../Logo/Logo';
 
-export const Header = () => {
+const Header = ({ toggleTheme, isDarkMode }) => {
     return (
-        <header className={styles.AppHeader}>
-            <h1>Распознавание еды по фотографии</h1>
-        </header>
+        <AppBar position="static">
+            <Toolbar>
+                <Logo />
+                <IconButton color="inherit" onClick={toggleTheme}>
+                    {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+            </Toolbar>
+        </AppBar>
     );
 };
+
+export default Header;
